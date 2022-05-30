@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Details</title>
+{% endblock %}
+{% block content %}
+    <div class="m-5">
+            <div class="container-fluid m-5">
+                <div class="container-fluid p-5">
+                  <div class="row">
+                    <div class="col-2">
+                        <div class="container">
+                            <img class="img-thumbnail" src="{{ user.profile.image.url }}" style="height: 200px; width: 200px;">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-7">
+                        <br>
+                        <h3 class="display-4">{{ user.first_name }} {{ user.last_name }}</h3>
+                        <p class="text-muted"><a href = "mailto: {{ user.email }}" class="text-decoration-none">{{ user.email }}</a></p>
+                        <button type="button" class="btn btn-primary btn-lg">Edit Profile</button>
+                    </div>
+                  </div>
+                    <div class="row">
+                        <h4>Account</h4>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <form>
+                            <div class="form-group row mb-3">
+                                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="{{user.username}}" readonly>
+                                </div>
+                          </div>
+                          <div class="form-group row mb-3">
+                            <label for="name" class="col-sm-2 col-form-label">Full Name</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" type="text" placeholder="{{ user.first_name}}" readonly>
+                            </div>
+                              <div class="col-sm-5">
+                                <input class="form-control" type="text" placeholder="{{user.last_name}}" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group row mb-3">
+                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" placeholder="{{user.email}}" readonly>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

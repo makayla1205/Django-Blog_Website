@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Details</title>
+{% endblock %}
+{% block content %}
+    <div id="post-wrapper">
+        <div class="card mb-3 m-5">
+          <div class="card-body">
+            <h2 class="card-title">{{ post_item.title }}</h2>
+              <p class="card-text">By, {{ post_item.author.username }}<br> <small class="text-muted">Updated: {{ post_item.updated_on }}</small></p>
+            <p class="card-text">{{ post_item.content }}</p>
+          </div>
+        </div>
+    </div>
+    <script>
+    function getid() {
+
+    }
+    function buildpost() {
+        var wrapper = document.getElementById("post-wrapper");
+
+    }
+    </script>
+{% endblock %}
